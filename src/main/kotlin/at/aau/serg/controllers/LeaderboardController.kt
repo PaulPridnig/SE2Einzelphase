@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RestController
 class LeaderboardController(
     private val gameResultService: GameResultService
 ) {
-
+    // Hier wird das gameResult geholt und nach Regeln sortiert
+    // Alt: { -it.score }, { it.id }
+    // Neu: { -it.score }, { it.timeInSeconds }, also Spielzeit als 2.Faktor statt Spieler ID
     @GetMapping
     fun getLeaderboard(): List<GameResult> =
-        gameResultService.getGameResults().sortedWith(compareBy({ -it.score }, { it.id }))
+        gameResultService.getGameResults().sortedWith(compareBy({ -it.score }, { it.timeInSeconds }))
 
 }
