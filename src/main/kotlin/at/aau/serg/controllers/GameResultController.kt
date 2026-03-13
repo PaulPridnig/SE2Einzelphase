@@ -12,12 +12,12 @@ class GameResultController(
 
     @GetMapping("/{gameResultId}")
     fun getGameResult(@PathVariable gameResultId: Long): GameResult? {
-        return gameResultService.getGameResult(gameResultId);
+        return gameResultService.getGameResult(gameResultId)
     }
 
     @GetMapping
     fun getAllGameResults(): List<GameResult> {
-        return gameResultService.getGameResults();
+        return gameResultService.getGameResults()
     }
 
     @PostMapping

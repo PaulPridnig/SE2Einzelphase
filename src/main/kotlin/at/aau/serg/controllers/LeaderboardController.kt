@@ -17,8 +17,8 @@ class LeaderboardController(
 ) {
     /*
 2.2.1: Hier wird das GameResult geholt und nach Regeln sortiert. Die Regel soll geändert werden.
-Alt: { -it.score }, { it.id }
-Neu: { -it.score }, { it.timeInSeconds }, also Spielzeit als 2.Faktor statt Spieler ID
+Alt: {-it.score }, { it.id }
+Neu: {-it.score }, { it.timeInSeconds }, also Spielzeit als 2. Faktor statt Spieler ID
 2.2.2: Zusätzlich rank als Query Parameter hinzufügen (optional) und GameResult als val.
 */
     @GetMapping
